@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>IT Career Horizons 2026</title>
+    <style>
+        :root {
+            --bg-dark: #020617;
+            --card-glass: rgba(15, 23, 42, 0.6);
+            --border-glass: rgba(255, 255, 255, 0.1);
+            --accent-blue: #38bdf8;
+            --accent-green: #34d399;
+            --accent-red: #fb7185;
+            --accent-orange: #fbbf24;
+            --accent-purple: #c084fc;
+            --text-primary: #f1f5f9;
+            --text-secondary: #94a3b8;
+        }
+
+        /* Обнуление и база */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.5;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        /* АНИМИРОВАННЫЙ ФОН - работает везде */
+        .bg-animate {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            z-index: -1;
+            background: radial-gradient(circle at 50% 50%, #0f172a 0%, #020617 100%);
+        }
+
+        .bg-blob {
+            position: absolute;
+            width: 300px; height: 300px;
+            background: var(--accent-blue);
+            filter: blur(100px);
+            opacity: 0.15;
+            border-radius: 50%;
+            animation: move 20s infinite alternate;
+        }
+
+        @keyframes move {
+            from { transform: translate(-10%, -10%); }
+            to { transform: translate(100%, 80%); }
+        }
+
+        /* Контейнер */
+        .container {
+            width: 100%;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 0 60px;
+        }
+
+        h1 {
+            font-size: clamp(2rem, 8vw, 3.5rem); /* Адаптивный размер шрифта */
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            background: linear-gradient(to bottom, #fff, #64748b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
+        }
+
+        .subtitle {
+            font-size: clamp(1rem, 4vw, 1.25rem);
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Сетка карточек */
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr; /* По умолчанию в колонку (мобилки) */
+            gap: 25px;
+        }
+
+        /* Планшеты и десктопы (от 768px) */
+        @media (min-width: 768px) {
+            .grid { grid-template-columns: repeat(2, 1fr); }
+            .full-width { grid-column: span 2; }
+        }
+
+        .card {
+            background: var(--card-glass);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid var(--border-glass);
+            border-radius: 20px;
+            padding: clamp(20px, 5vw, 35px);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .tag {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 15px;
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 6px;
+            background: rgba(255,255,255,0.05);
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .desc {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .stack-box {
+            background: rgba(0,0,0,0.3);
+            padding: 15px;
+            border-radius: 12px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.85rem;
+            margin-bottom: 20px;
+        }
+
+        .outlook {
+            font-size: 0.9rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .dot { width: 8px; height: 8px; border-radius: 50%; }
+
+        /* Цветовые акценты */
+        .c1 .tag { color: var(--accent-blue); } .c1 .dot { background: var(--accent-blue); }
+        .c2 .tag { color: var(--accent-green); } .c2 .dot { background: var(--accent-green); }
+        .c3 .tag { color: var(--accent-red); } .c3 .dot { background: var(--accent-red); }
+        .c4 .tag { color: var(--accent-orange); } .c4 .dot { background: var(--accent-orange); }
+        .c5 .tag { color: var(--accent-purple); } .c5 .dot { background: var(--accent-purple); }
+
+        footer {
+            text-align: center;
+            padding: 60px 20px;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bg-animate">
+        <div class="bg-blob"></div>
+    </div>
+
+    <div class="container">
+        <header>
+            <h1>Tech Horizons 2026</h1>
+            <p class="subtitle">The definitive guide to the most vital roles in the evolving technology ecosystem.</p>
+        </header>
+
+        <main class="grid">
+            <div class="card c1">
+                <span class="tag">Engineering</span>
+                <h2>Software Engineer</h2>
+                <p class="desc">Design and maintain applications. In 2026, the focus is on architectural integrity and AI-collaboration to accelerate the SDLC.</p>
+                <div class="stack-box">Python, TS, Java, Git, APIs, Agile</div>
+                <div class="outlook"><span class="dot"></span> Outlook: Backbone of Industry</div>
+            </div>
+
+            <div class="card c2">
+                <span class="tag">Intelligence</span>
+                <h2>Data Scientist</h2>
+                <p class="desc">Transform raw data into insights. Moving toward responsible AI, governance, and model productization.</p>
+                <div class="stack-box">SQL, PyTorch, Pandas, MLOps, Stats</div>
+                <div class="outlook"><span class="dot"></span> Outlook: Highly Sought After</div>
+            </div>
+
+            <div class="card c3">
+                <span class="tag">Defense</span>
+                <h2>Cybersecurity Analyst</h2>
+                <p class="desc">Protecting assets via Zero-Trust and AI-driven threat intelligence. Growth is fueled by rising systemic risks.</p>
+                <div class="stack-box">SIEM, NIST, Pentest, Bash, Splunk</div>
+                <div class="outlook"><span class="dot"></span> Outlook: Explosive Growth</div>
+            </div>
+
+            <div class="card c4">
+                <span class="tag">Velocity</span>
+                <h2>DevOps Engineer</h2>
+                <p class="desc">Scaling reliability through automation and Platform Engineering. Essential for high-speed cloud-native teams.</p>
+                <div class="stack-box">K8s, Docker, Terraform, CI/CD, AWS</div>
+                <div class="outlook"><span class="dot"></span> Outlook: Critical for Agility</div>
+            </div>
+
+            <div class="card c5 full-width">
+                <span class="tag">Infrastructure</span>
+                <h2>Cloud Architect</h2>
+                <p class="desc">Managing enterprise-wide cloud strategies. Strategizing multi-cloud migrations and AI workload optimization at scale.</p>
+                <div class="stack-box">Cloud Design, IAM, Serverless, Disaster Recovery, Multi-Cloud</div>
+                <div class="outlook"><span class="dot"></span> Outlook: Highly Strategic Role</div>
+            </div>
+        </main>
+
+        <footer>
+            <p>© 2026 IT Career Insights. Fully responsive design for all devices.</p>
+        </footer>
+    </div>
+
+</body>
+</html>
